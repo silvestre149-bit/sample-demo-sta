@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Bem Sucedido</title>
+    <style>
+        /* Aqui vai o seu CSS ou a referência para seu arquivo de CSS externo */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .success-container {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+        }
+
+        .success-container h1 {
+            color: #4CAF50;
+        }
+
+        .success-container p {
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Conteúdo do success.ejs -->
+    <div class="success-container">
+        <% if (authMethod==='SAML' ) { %>
+            <h1>Autenticação bem sucedida via SAML!</h1>
+           
+            <% } else if (authMethod==='OIDC' ) { %>
+                <h1>Autenticação bem sucedida via OIDC!</h1>
+           
+                <% } else { %>
+                    <h1>Autneticação bem sucedida!</h1>
+                    
+                    <% } %>
+    </div>
+
+</body>
+
+</html>
